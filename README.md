@@ -14,23 +14,22 @@
 ## CheckList
 
 ### Desarrollo del frontend
-
-- Inicializar el proyecto de Angular ✅ 
-- Crear la interfaz de usuario:
-    - Diseñar un chat medico interactivo.
-    - Implementar componentes para:
-        - Mostrar respuestas textuales.
-        - Visualizar gráficos y tablas (Chart.js o D3.js).
-        - Sugerir acciones basadas en respuestas.
-    - Integrar con la API backend.
-- Implementar visualizaciones:
-    - Gráficos de evolución de parámetros clínicos (ej: HbA1c, creatinina).
-    - Tablas de medicación actual.
-    - Alertas visuales para valores críticos.
-- Mejorar la experiencia de usuario:
-    - Destacar términos médicos clave.
-    - Añadir botones de acción rápida (ej: "Ver guía completa", "Ajustar medicación").
-    - Asegurar que la interfaz sea responsive y accesible.
+- [x] Inicializar el proyecto de Angular 
+- [ ] Crear la interfaz de usuario:
+    - [ ] Diseñar un chat medico interactivo.
+    - [ ] Implementar componentes para:
+        - [ ] Mostrar respuestas textuales.
+        - [ ] Visualizar gráficos y tablas (Chart.js o D3.js).
+        - [ ] Sugerir acciones basadas en respuestas.
+    - [ ] Integrar con la API backend.
+- [ ] Implementar visualizaciones:
+    - [ ] Gráficos de evolución de parámetros clínicos (ej: HbA1c, creatinina).
+    - [ ] Tablas de medicación actual.
+    - [ ] Alertas visuales para valores críticos.
+- [ ] Mejorar la experiencia de usuario:
+    - [ ] Destacar términos médicos clave.
+    - [ ] Añadir botones de acción rápida (ej: "Ver guía completa", "Ajustar medicación").
+    - [ ] Asegurar que la interfaz sea responsive y accesible.
 
 ### Configurar de AWS:
 - Crear una cuenta de AWS.
@@ -70,7 +69,7 @@ Este proyecto tiene como objetivo desarrollar un asistente basado en inteligenci
 ## Estructura de GitHub
 Por ahora dispondremos las carpetas del proyecto tal que así:
 ```
-medical-assistant/  
+CloudCare/  
 ├── backend/  
 │   ├── api/                  # API Gateway/Lambda  
 │   ├── data_processing/      # Scripts de ETL  

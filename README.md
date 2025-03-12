@@ -7,7 +7,7 @@
 ## Índice:
 - [CheckList](#checklist)
 - [Descripción](#descripción)
-- [Organización de las carpetas](#organización-de-las-carpetas)
+- [Estructura de GitHub](#estructura-de-github)
 - [Autores](#autores)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 
@@ -67,7 +67,7 @@ Ya veremos lo que hacemos aquí
 ## Descripción
 Este proyecto tiene como objetivo desarrollar un asistente basado en inteligencia artificial que automatice la generación de resúmenes evolutivos para pacientes hospitalizados al momento del alta médica. El asistente está diseñado para reducir la carga administrativa del personal sanitario y mejorar la calidad y estandarización de los informes clínicos.
 
-## Organización de las carpetas
+## Estructura de GitHub
 Por ahora dispondremos las carpetas del proyecto tal que así:
 ```
 medical-assistant/  
@@ -89,6 +89,16 @@ medical-assistant/
 └── .github/  
     └── workflows/            # CI/CD para despliegue AWS  
 ````
+
+### Flujo de Ramas: 
+Estas ramas son las que me ha recomendado ChatGpt
+
+1. `main` → Solo código estable.
+2. `dev` → Integración diaria.
+3. Ramas específicas:
+    - `feat/medical-rag`
+    - `feat/context-management`
+    - `feat/visualizations`
 
 ## Autores
 

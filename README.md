@@ -32,33 +32,33 @@
     - [ ] Asegurar que la interfaz sea responsive y accesible.
 
 ### Configurar de AWS:
-- Crear una cuenta de AWS.
-- Configurar servicios clave:
-    - AWS Bedrock (para modelos de IA).
-    - Amazon S3 (para almacenar guías clínicas y datos).
-    - AWS Lambda (para el backend).
-    - Amazon DynamoDB (para gestión de contexto).
-    - Amazon OpenSearch (para RAG). <--- Este hay que verlo, no estoy seguro  
-- Configurar IAM roles y políticas de seguridad.
-- Crear el diagrama de la estructura y de la base de datos.
+- [ ] Crear una cuenta de AWS.
+- [ ] Configurar servicios clave:
+    - [ ] AWS Bedrock (para modelos de IA).
+    - [ ] Amazon S3 (para almacenar guías clínicas y datos).
+    - [ ] AWS Lambda (para el backend).
+    - [ ] Amazon DynamoDB (para gestión de contexto).
+    - [ ] Amazon OpenSearch (para RAG). <--- Este hay que verlo, no estoy seguro  
+- [ ] Configurar IAM roles y políticas de seguridad.
+- [ ] Crear el diagrama de la estructura y de la base de datos.
 
 ### Desarrollo del backend y la IA  
-- Crear API Gateway para manejar solicitudes.  
-- Implementar funciones Lambda para:
-    - Procesar preguntas médicas.
-    - Gestionar el historial de conversaciones (DynamoDB).
-    - Integrar AWS Bedrock para generar respuestas.
-- Crear un dataset sintético de diálogos médicos (100+ ejemplos).
-- Fine-tunar el modelo en AWS Bedrock (si es necesario).
-- Implementar técnicas de prompt engineering:
-    - Few-shot prompting con ejemplos médicos.
-    - Chain-of-thought prompting para respuestas detalladas.
-- Validar respuestas contra guías clínicas para evitar alucinaciones.
-- Implementar gestión de contexto:
-    - Guardar historial de conversaciones en DynamoBD.
-    - Implementar memoria de contexto para preguntas encadenadas.
-- Configurar caching:
-    - Usar Redis para cachear respuestas frecuentes y reducir costos.
+- [ ] Crear API Gateway para manejar solicitudes.  
+- [ ] Implementar funciones Lambda para:
+    - [ ] Procesar preguntas médicas.
+    - [ ] Gestionar el historial de conversaciones (DynamoDB).
+    - [ ] Integrar AWS Bedrock para generar respuestas.
+- [ ] Crear un dataset sintético de diálogos médicos (100+ ejemplos).
+- [ ] Fine-tunar el modelo en AWS Bedrock (si es necesario).
+- [ ] Implementar técnicas de prompt engineering:
+    - [ ] Few-shot prompting con ejemplos médicos.
+    - [ ] Chain-of-thought prompting para respuestas detalladas.
+- [ ] Validar respuestas contra guías clínicas para evitar alucinaciones.
+- [ ] Implementar gestión de contexto:
+    - [ ] Guardar historial de conversaciones en DynamoBD.
+    - [ ] Implementar memoria de contexto para preguntas encadenadas.
+- [ ] Configurar caching:
+    - [ ] Usar Redis para cachear respuestas frecuentes y reducir costos.
 
 ### Integración y pruebas
 Ya veremos lo que hacemos aquí

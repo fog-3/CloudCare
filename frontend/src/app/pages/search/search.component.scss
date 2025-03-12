@@ -35,27 +35,27 @@
     gap: 30px;
     
     color: black;
-    background-color: rgb(109, 178, 117, 57%);
+    background-color: var(--color-principal);
     border: none;
     border-radius: 20px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 10px 20px rgb(0 0 0 / 30%);	
+    box-shadow: 0 1px 2px var(--color-sombras), 0 10px 20px var(--color-sombras);	
     
     overflow: hidden;
 }
 
 .fondoBloqueTipo::placeholder {
-    color: rgb(43, 71, 46, 57%);;
+    color: var(--color-secundario);
 }
 
 .button{
     padding: 10px 20px;
-    background-color: rgb(43, 71, 46, 57%);
+    background-color: var(--color-secundario);
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 30%), 0 10px 20px rgb(0 0 0 / 30%);
+    box-shadow: 0 2px 4px var(--color-sombras), 0 10px 20px var(--color-sombras);
 
     height: 100%;
 }
@@ -78,7 +78,7 @@
 
 .button:active {
 	transform: translateY(2px);
-  	box-shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 5px 10px rgb(0 0 0 / 30%);
+  	box-shadow: 0 1px 2px var(--color-sombras), 0 5px 10px var(--color-sombras);
 }
 
 .icon {

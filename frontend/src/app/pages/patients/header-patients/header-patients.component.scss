@@ -1,0 +1,41 @@
+header {
+    padding: 20px;
+
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo {
+	width: 70px;
+	height: auto;
+    margin-right: 10px;
+}
+
+.contenidoCentrado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+	width: 100%;
+	height: auto;
+}
+
+.search-container {
+    position: absolute; /* Posiciona la barra de búsqueda de manera absoluta */
+    left: 50%; /* La mueve al 50% del contenedor */
+    transform: translateX(-50%);
+
+    width: 30%;
+}

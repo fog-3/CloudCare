@@ -1,3 +1,4 @@
+# Archivos a ignorar de la rama b_Frontend
 frontend/.angular
 frontend/node_modules
 

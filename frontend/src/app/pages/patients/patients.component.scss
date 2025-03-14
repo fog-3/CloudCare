@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .linea {
     width: 100%;
     height: 2px;
@@ -117,4 +116,9 @@
 .boton:active {
 	transform: translateY(2px);
   	box-shadow: 0 1px 2px var(--color-sombras), 0 5px 10px var(--color-sombras);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-terciario);
 }

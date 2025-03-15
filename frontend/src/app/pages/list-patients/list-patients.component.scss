@@ -5,13 +5,14 @@
 }
 
 .linea {
-    width: 80%;
+    width: 100%;
     height: 2px;
     background: linear-gradient(to right, transparent, var(--color-secundario), transparent);
 }
 
-#completa {
-    width: 100%;
+a {
+    text-decoration: none;
+    color: var(--color-terciario);
 }
 
 .content {
@@ -29,44 +30,68 @@
 
 .patient {
     display: flex;
-    align-items: center;
     padding: 10px;
     gap: 20px;
-    height: 150px;
+}
+
+.dataPatient {
+    display: flex;
+    flex-direction: column;
+        
+    width: 100%;
+    height: 100%;
 }
 
 .photoPatient {
     background-color: grey;
-    height: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 10px;
 }
 
-.dataPatient {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 500px) {
+    #onlyTabsLap {
+        font-size: 0;
+    }
+    
+    .patient {
+        height: auto;
+    }
+
+    .dataPatient {
+        gap: 20px;
+    }
+    
+    .photoPatient {
+        height: 80px;
+    }
 }
 
-.personalDataPatient {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100%;
-    height: 50%;
-}
-
-.hospitalDataPatient {
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    height: 50%;
-    gap: 30px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-terciario);
+@media (min-width: 500px) {
+    .patient {
+        height: 150px;
+    }
+    
+    .photoPatient {
+        height: 100%;
+    }
+    
+    .personalDataPatient {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        width: 100%;
+        height: 50%;
+    }
+    
+    .hospitalDataPatient {
+        display: flex;
+        align-items: center;
+    
+        width: 100%;
+        height: 50%;
+        gap: 30px;
+    }
 }

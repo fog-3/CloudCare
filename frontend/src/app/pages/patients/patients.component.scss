@@ -10,23 +10,6 @@
     background: linear-gradient(to right, transparent, var(--color-secundario), transparent);
 }
 
-.parallel {
-    display: flex;
-}
-
-.content {
-    padding: 10px;
-    height: auto;
-    width: 20%;
-}
-
-.history {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    border-right: 1px solid var(--color-secundario);
-}
-
 .summaryPatient {
     display: grid;
     width: 100%;
@@ -35,19 +18,9 @@
     gap: 20px;
 }
 
-/*.personalData {
-    background-color: lightyellow;
-}*/
-
-.parallelPatient {
-    display: flex;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-
 .photoPatient {
+    width: 50%;
     background-color: grey;
-    width: 20%;
     aspect-ratio: 1 / 1;
     border-radius: 10px;
 }
@@ -58,6 +31,48 @@
     gap: 30px;
     row-gap: 10px;
 }
+
+.contentButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.boton{
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--color-sombras), 0 10px 20px var(--color-sombras);
+}
+
+.boton::before {
+    content: "";
+    
+    top: -2px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    z-index: -1;
+    
+    border-radius: 30px;
+    
+    opacity: 1;
+    transition: all .2s ease;
+}
+
+.boton:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px var(--color-sombras), 0 5px 10px var(--color-sombras);
+}
+
+/*.personalData {
+    background-color: lightyellow;
+}*/
 
 /*.evolutionData {
     background-color: yellow;
@@ -79,46 +94,61 @@
     background-color: orangered;
 }*/
 
-.contentButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.boton{
-    padding: 10px 20px;
-    background-color: var(--color-secundario);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px var(--color-sombras), 0 10px 20px var(--color-sombras);
-
-    width: 20%;
-}
-
-.boton::before {
-	content: "";
-	
-	top: -2px;
-	right: -1px;
-	bottom: -1px;
-	left: -1px;
-	z-index: -1;
-	
-	border-radius: 30px;
-	
-	opacity: 1;
-	transition: all .2s ease;
-}
-
-.boton:active {
-	transform: translateY(2px);
-  	box-shadow: 0 1px 2px var(--color-sombras), 0 5px 10px var(--color-sombras);
-}
-
 a {
     text-decoration: none;
     color: var(--color-terciario);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 500px) {
+    #onlyTabsLap {
+        font-size: 0;
+    }
+
+    .photoPatient {
+        left: 50%;
+        transform: translateX(50%);
+    }
+
+    .data {
+        margin-top: 20px;
+    }
+
+    .contentButton {
+        padding-bottom: 30px;
+    }
+
+    .boton {
+        width: 60%;
+    }
+}
+
+@media (min-width: 500px) {
+    .parallel {
+        display: flex;
+    }
+    
+    .content {
+        padding: 10px;
+        height: auto;
+        width: 20%;
+    }
+    
+    .history {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border-right: 1px solid var(--color-secundario);
+    }
+
+    .parallelPatient {
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .boton{
+        width: 20%;
+    }
 }

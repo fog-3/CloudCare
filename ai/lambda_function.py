@@ -43,3 +43,20 @@ def lambda_handler(event, context):
             "response": respuesta_ia
         }
     }
+
+# Simulación de invocación local
+if __name__ == "__main__":
+    # Simular un evento que podría venir de API Gateway o similar
+    evento_simulado = {
+        "question": "¿Qué tratamiento sigue un paciente con insuficiencia cardíaca?"
+    }
+    
+    # Simular el contexto (no es necesario detallarlo mucho localmente, puede ser None)
+    contexto_simulado = None
+    
+    # Invocar la función Lambda localmente
+    resultado = lambda_handler(evento_simulado, contexto_simulado)
+    
+    # Imprimir el resultado
+    print("Resultado de la simulación:")
+    print(resultado["body"]["response"])

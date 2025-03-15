@@ -1,6 +1,5 @@
 import openai # openai v1.0.0+
 import os # Para leer las variables de entorno APY_KEY y BASE_URL
-from langchain_core.messages import HumanMessage
 
 # Configurar cliente OpenAI con LiteLLM
 client = openai.OpenAI(
@@ -8,14 +7,19 @@ client = openai.OpenAI(
     base_url=os.getenv("BASE_URL") # set proxy to base_url
 )
 
-# Crear mensaje usando LangChain
-pregunta = HumanMessage(content="Genera un resumen evolutivo para el paciente con diagnóstico de insuficiencia cardíaca.")
+def lambda_handler(event, context):
+    """
+    AWS Lambda para responder preguntas médicas con IA.
+    """
 
-# Enviar mensaje al modelo usando OpenAI client
-response = client.chat.completions.create(
-    model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
-    messages=[
-        {
+    #Obtener la pregunta del evento recibido
+    question = event.get("question", "¿Cuál es la medicación actual del paciente") # por si question no existe o es None, toma esa pregunta por defecto
+
+    #Enviat la solicitud al modelo con un contexto de asistente médico
+    response = client.chat.completions.create(
+        model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
+        messages=[
+            {
             "role": "system",
             "content": (
                 "Eres un asistente médico especializado en la elaboración de resúmenes clínicos para profesionales de la salud. "
@@ -24,10 +28,18 @@ response = client.chat.completions.create(
                 "Si la pregunta requiere información adicional que no se proporciona, indícalo claramente y sugiere qué datos serían necesarios para una respuesta completa. "
                 "Prioriza la claridad y evita términos excesivamente técnicos a menos que sean esenciales."
             )
-        },
-        {"role": "user", "content": pregunta.content}
-    ]
-)
+            },
+            {"role": "user", "content": question}
+        ]
+    )
 
-# Imprimir respuesta del modelo
-print(response.choices[0].message.content)
+    # Extraer la respuesta del modelo
+    respuesta_ia = response.choices[0].message.content
+
+    # Devolver la respuseta en formato JSON a AWS Lambda
+    return {
+        "statusCode": 200,
+        "body": {
+            "response": respuesta_ia
+        }
+    }

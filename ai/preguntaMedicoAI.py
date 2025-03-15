@@ -1,6 +1,7 @@
 import openai # openai v1.0.0+
 from langchain_core.messages import HumanMessage
 
+# Configurar cliente OpenAI con LiteLLM
 client = openai.OpenAI(
     api_key="sk-ihowCuDNWOYpdv9-foT7BA",
     base_url="https://litellm.dccp.pbu.dedalus.com" # set proxy to base_url

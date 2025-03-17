@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+	<persistence-unit name="jpa.demo" transaction-type="RESOURCE_LOCAL">
+		<!-- Proveedor de JPA: Hibernate -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- Lista de entidades -->
+		<class>es.uma.informatica.jpa.demo.Lab_Iniciales</class>
+		<class>es.uma.informatica.jpa.demo.Medicacion</class>
+		<class>es.uma.informatica.jpa.demo.Evolucion</class>
+		<class>es.uma.informatica.jpa.demo.Pacientes</class>
+		<class>es.uma.informatica.jpa.demo.Procedimientos</class>
+		<class>es.uma.informatica.jpa.demo.Notas</class>
+
+		<properties>
+			<!-- Driver de MySQL -->
+			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+			<!-- URL de la base de datos -->
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://cloudcare-mysql.c7a6cg2iqih3.eu-central-1.rds.amazonaws.com:3306/cloudcare-mysql"/>
+
+			<!-- Usuario y contraseña -->
+			<property name="jakarta.persistence.jdbc.user" value="adminBD"/>
+			<property name="jakarta.persistence.jdbc.password" value="EilIOAYPgyIce56"/>
+
+			<!-- Configuración de Hibernate -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Opciones: create, update, validate, none -->
+			<property name="hibernate.show_sql" value="true"/> <!-- Muestra las consultas SQL en la consola -->
+			<property name="hibernate.format_sql" value="true"/> <!-- Formatea las consultas SQL -->
+		</properties>
+	</persistence-unit>
+</persistence>

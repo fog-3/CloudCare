@@ -23,12 +23,12 @@ export class RequestsServiceService {
   }
 
   // Método para actualizar datos
-  actualizarDatos(id: number, datos: any): Observable<any> {
+  /*actualizarDatos(id: number, datos: any): Observable<any> {
     return this.http.put(`${this.apiURL}/endpoint/${id}`, datos);
   }
 
   // Método para eliminar datos
   eliminarDatos(id: number): Observable<any> {
     return this.http.delete(`${this.apiURL}/endpoint`);
-  }
+  }*/
 }

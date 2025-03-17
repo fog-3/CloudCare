@@ -7,8 +7,6 @@ client = openai.OpenAI(
     base_url="https://litellm.dccp.pbu.dedalus.com" # set proxy to base_url
 )
 
-# request sent to model set on litellm proxy, litellm --model
-
 # Crear mensaje usando LangChain
 pregunta = HumanMessage(content="Genera un resumen evolutivo para el paciente con diagnóstico de insuficiencia cardíaca.")
 

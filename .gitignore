@@ -4,3 +4,5 @@ frontend/node_modules
 
 # Archivos a ignorar de la rama b_AI
 .venv_CloudCare_AI
+*.zip
+ai/lambda_project/python

@@ -20,7 +20,7 @@ def lambda_handler(event, context):
                 "según la pregunta médica del usuario. "
                 "La respuesta debe contener solo el código HTML del gráfico, sin explicaciones, sin texto adicional, "
                 "y sin encabezados como 'Aquí tienes un gráfico...'. "
-                "La salida debe ser un código funcional que pueda insertarse directamente en una página web."
+                "La salida debe ser un código funcional que pueda insertarse directamente en una página web usando angular."
             )},
             {"role": "user", "content": question}
         ]

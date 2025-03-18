@@ -1,0 +1,89 @@
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* General */
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Bloques tipo */
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.search-bar {
+	position: relative;
+	
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.fondoBloqueTipo {
+	z-index: 2;
+	
+    display: flex;
+    align-items: center;
+    
+    width: 95%;
+    height: 50px;
+    padding: 15px;
+    gap: 30px;
+    
+    color: black;
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px var(--color-sombras), 0 10px 20px var(--color-sombras);	
+    
+    overflow: hidden;
+}
+
+.fondoBloqueTipo::placeholder {
+    color: var(--color-secundario);
+}
+
+.button{
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--color-sombras), 0 10px 20px var(--color-sombras);
+
+    height: 100%;
+}
+
+.button::before {
+	content: "";
+	position: absolute;
+	
+	top: -2px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
+	z-index: -1;
+	
+	border-radius: 30px;
+	
+	opacity: 1;
+	transition: all .2s ease;
+}
+
+.button:active {
+	transform: translateY(2px);
+  	box-shadow: 0 1px 2px var(--color-sombras), 0 5px 10px var(--color-sombras);
+}
+
+.icon {
+    width: 20px;
+    height: auto;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/

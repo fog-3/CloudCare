@@ -1,0 +1,10 @@
+com\CloudCare\CloudCareSpring\entities\Notas.class
+com\CloudCare\CloudCareSpring\entities\Pacientes.class
+com\CloudCare\CloudCareSpring\entities\MedicacionId.class
+com\CloudCare\CloudCareSpring\entities\NotasId.class
+com\CloudCare\CloudCareSpring\entities\Procedimientos.class
+com\CloudCare\CloudCareSpring\entities\Lab_Iniciales.class
+com\CloudCare\CloudCareSpring\CloudCareSpringApplication.class
+com\CloudCare\CloudCareSpring\entities\Evolucion.class
+com\CloudCare\CloudCareSpring\entities\Medicacion.class
+com\CloudCare\CloudCareSpring\entities\EvolucionId.class

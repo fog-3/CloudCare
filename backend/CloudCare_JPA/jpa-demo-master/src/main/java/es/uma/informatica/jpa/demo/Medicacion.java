@@ -7,25 +7,6 @@ import java.util.Objects;
 
 @Entity
 public class Medicacion {
-	@Embeddable
-	public static class MedicacionId {
-		private String medicamento;
-
-		private Integer pacienteId;
-
-		@Override
-		public boolean equals(Object o) {
-			if (o == null || getClass() != o.getClass()) return false;
-			MedicacionId that = (MedicacionId) o;
-			return Objects.equals(medicamento, that.medicamento) && Objects.equals(pacienteId, that.pacienteId);
-		}
-
-		@Override
-		public int hashCode() {
-			return Objects.hash(medicamento, pacienteId);
-		}
-	}
-
 	@ManyToOne
 	private Pacientes paciente;
 

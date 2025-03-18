@@ -7,29 +7,6 @@ import java.util.Objects;
 
 @Entity
 public class Evolucion {
-	@Embeddable
-	public static class EvolucionId {
-		@Temporal(TemporalType.DATE)
-		private Date fecha;
-
-		@Temporal(TemporalType.DATE)
-		private Date hora;
-
-		private Integer pacienteId;
-
-		@Override
-		public boolean equals(Object o) {
-			if (o == null || getClass() != o.getClass()) return false;
-			EvolucionId that = (EvolucionId) o;
-			return Objects.equals(fecha, that.fecha) && Objects.equals(hora, that.hora);
-		}
-
-		@Override
-		public int hashCode() {
-			return Objects.hash(fecha, hora);
-		}
-	}
-
 	@ManyToOne
 	private Pacientes paciente;
 

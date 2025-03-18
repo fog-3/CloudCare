@@ -39,6 +39,12 @@ public class Pacientes implements Serializable {
 	@OneToMany (mappedBy = "paciente")
 	private List<Notas> notas;
 
+	@OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Lab_Iniciales labIniciales;
+
+	@OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Procedimientos procedimientos;
+
 	public Integer getPacienteid() { return pacienteId; }
 	public void setPacienteid(Integer pacienteid) { this.pacienteId = pacienteid; }
 

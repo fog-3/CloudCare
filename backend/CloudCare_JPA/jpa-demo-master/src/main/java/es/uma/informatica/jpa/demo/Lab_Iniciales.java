@@ -9,7 +9,10 @@ import jakarta.persistence.*;
  *
  */
 @Entity
-public class Lab_Iniciales extends Notas implements Serializable {
+public class Lab_Iniciales {
+	@Id  // Usamos pacienteId como clave primaria
+	private Integer pacienteId;
+
 	private Float glucosa;
 	private Float ph;
 	private Float cetonas;
@@ -21,7 +24,10 @@ public class Lab_Iniciales extends Notas implements Serializable {
 	private Float urea;
 	private Float amilasa;
 
-	private Integer pacienteId;
+	@OneToOne
+	@MapsId
+	@JoinColumn(name = "pacienteId")
+	private Pacientes paciente;
 
 	public Float getGlucosa() { return glucosa; }
 	public void setGlucosa(Float glucosa) { this.glucosa = glucosa; }
@@ -53,6 +59,6 @@ public class Lab_Iniciales extends Notas implements Serializable {
 	public Float getAmilasa() { return amilasa; }
 	public void setAmilasa(Float amilasa) { this.amilasa = amilasa; }
 
-	public Integer getPacienteId() { return pacienteId; }
-	public void setPacienteId(Integer pacienteId) { this.pacienteId = pacienteId; }
+	//public Integer getPacienteId() { return pacienteId; }
+	//public void setPacienteId(Integer pacienteId) { this.pacienteId = pacienteId; }
 }

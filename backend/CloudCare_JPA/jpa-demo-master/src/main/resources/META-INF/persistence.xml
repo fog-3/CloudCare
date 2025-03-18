@@ -17,14 +17,14 @@
 			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 
 			<!-- URL de la base de datos -->
-			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://cloudcare-mysql.c7a6cg2iqih3.eu-central-1.rds.amazonaws.com:3306/cloudcare-mysql"/>
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://cloudcare-mysql.c7a6cg2iqih3.eu-central-1.rds.amazonaws.com:3306/CloudCare"/>
 
 			<!-- Usuario y contraseña -->
 			<property name="jakarta.persistence.jdbc.user" value="adminBD"/>
 			<property name="jakarta.persistence.jdbc.password" value="EilIOAYPgyIce56"/>
 
 			<!-- Configuración de Hibernate -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Opciones: create, update, validate, none -->
 			<property name="hibernate.show_sql" value="true"/> <!-- Muestra las consultas SQL en la consola -->
 			<property name="hibernate.format_sql" value="true"/> <!-- Formatea las consultas SQL -->

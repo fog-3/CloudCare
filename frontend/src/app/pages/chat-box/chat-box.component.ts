@@ -15,8 +15,8 @@ interface Mensaje {
   styleUrl: './chat-box.component.scss'
 })
 
-export class ChatBoxComponent implements OnInit {
-  mensajes: Mensaje[] = []; //Almacena los mensajes del chat
+export class ChatBoxComponent {
+  /*mensajes: Mensaje[] = []; //Almacena los mensajes del chat
   nuevoMensaje: string = ''; //Almacena el mensaje actual del usuario
   private apiUrl = 'https://url-de-tu-api.com'; // URL de la API que interactúa con la IA
 
@@ -50,5 +50,5 @@ export class ChatBoxComponent implements OnInit {
 
     // Limpia el campo de entrada
     this.nuevoMensaje = '';
-  }
+  }*/
 }

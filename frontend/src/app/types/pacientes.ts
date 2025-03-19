@@ -6,7 +6,7 @@ export interface Paciente {
     motivoingreso: string;
     diagnosticoprincipal: string;
     condicionesprevias: string;
-    fechaingreso: Date;
+    fechaingreso: string;
     servicio: string;
     estadoalingreso: string;
     pacienteid: number;

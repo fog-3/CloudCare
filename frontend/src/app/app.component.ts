@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Paciente } from './types/pacientes';
 import { PacientesService } from './services/pacientes.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,25 +13,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   providers: [PacientesService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-})
+})  
 export class AppComponent {
-  public pacientes: Paciente[] = [];
+  public onOpenModal(){
 
-  constructor(private pacienteService: PacientesService){}
-
-  ngOnInit() {
-    this.getPacientes();
-  }
-
-  public getPacientes(): void {
-    this.pacienteService.getPacientes().subscribe(
-      (response: Paciente[]) => {
-        this.pacientes = response;
-      },
-
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
   }
 }

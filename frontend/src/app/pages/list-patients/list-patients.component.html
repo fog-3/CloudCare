@@ -2,22 +2,24 @@
 
 <div class="linea"></div>
 
-<div *ngFor="Paciente de pacientes">
-    <a routerLink="/patients">
+<div *ngFor="let paciente of pacientes">
+    <a (click)="getPacienteByName(paciente.pacienteid)">
         <div class="content">
             <div class="patient">
-                <div class="photoPatient"></div>
+                <div class="photoPatient">
+                    <img src="../../../assets/images/foto_perfil.png" alt="Foto de perfil usuario">
+                </div>
     
                 <div class="dataPatient">
-                    <div class="personalDataPatient">
-                        <h3>{{Paciente.nombre}}</h3>
-                        <h3 id="onlyTabsLap">{{Paciente.edad}}</h3>
-                        <h3 id="onlyTabsLap">{{Paciente.sexo}}</h3>
+                    <div class="dataPatient2">
+                        <h3>{{paciente.nombre}}</h3>
+                        <h3 id="onlyTabsLap">Edad: {{paciente.edad}}</h3>
+                        <h3 id="onlyTabsLap">Sexo: {{paciente.sexo}}</h3>
+                        <h3 id="onlyTabsLap">Fecha de ingreso: {{paciente.fechaingreso}}</h3>
                     </div>
         
-                    <div class="hospitalDataPatient">
-                        <h3 id="onlyTabsLap">{{Paciente.fechaingreso}}</h3>
-                        <h3>{{Paciente.motivoingreso}}</h3>
+                    <div class="dataPatient2">
+                        <h3>Motivo de ingreso: {{paciente.motivoingreso}}</h3>
                     </div>
                 </div>
             </div>

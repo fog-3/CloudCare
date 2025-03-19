@@ -2,65 +2,197 @@
 
 <div class="linea"></div>
 
-<div class="parallel">
-    <div class="content">
-        <aside class="history">
-            <h3 id="onlyTabsLap">Historial</h3>
-            <h3 id="onlyTabsLap">Historial</h3>
-        </aside>
-    </div>
+<div >
+    <div class="parallel">
+        <div class="content">
+            <aside class="history">
+                <h1 id="onlyTabsLap">Evolución</h1>
 
-    <div class="summaryPatient">
-        <section class="personalData">
-            <div class="parallelPatient">
-                <div class="photoPatient"></div>
-
-                <div class="data">
-                    <h3>Nombre del paciente</h3>
-                    <h3>Edad</h3>
-                    <h3>Sexo</h3>
-                    <h3>Alergias</h3>
-                    <h3>Motivo del ingreso</h3>
-                    <h3>Fecha ingreso</h3>
-                    <h3>Diagnostico principal</h3>
-                    <h3>Condiciones previas</h3>
-                    <h3>Servicio</h3>
-                    <h3>Estado ingreso</h3>
+                <div *ngFor="let evoluciones of evoluciones">
+                    <a (click)="goEvolucionPaciente(paciente.pacienteid, evoluciones.id.fechaYHora)">
+                        <div class="parallel2">
+                            <h3>{{normalizarStringFecha(evoluciones.id.fechaYHora)}}</h3>
+                        </div>
+                        <br>
+                    </a>
                 </div>
-            </div>
-            
-        </section>
+            </aside>
+        </div>
 
-        <section class="evolutionData">
-            <h1>Datos sobre la evolución</h1>
-        </section>
+        <div class="summaryPatient">
+            <section class="personalData">
+                <div class="parallelPatient">
+                    <div class="photoPatient">
+                        <img src="../../../assets/images/foto_perfil.png" alt="Foto de perfil usuario">
+                    </div>
 
-        <section class="inicialLabsdata">
-            <h1>Datos sobre las pruebas iniciales</h1>
-        </section>
+                    <div class="data">
+                        <h3>{{paciente.nombre}}</h3>
+                        <h3>Edad: {{paciente.edad}}</h3>
+                        <h3>Sexo: {{paciente.sexo}}</h3>
+                        <h3 *ngIf="paciente?.alergias != null">Alergias: {{paciente.alergias}}</h3>
+                        <h3 *ngIf="paciente?.alergias == null">No tiene alergias</h3>
+                        <h3>Motivo de ingreso: {{paciente.motivoingreso}}</h3>
+                        <h3>Fecha de ingreso: {{paciente.fechaingreso}}</h3>
+                        <h3>Diagnóstico principal: {{paciente.diagnosticoprincipal}}</h3>
+                        <h3>Condiciones previas: {{paciente.condicionesprevias}}</h3>
+                        <h3>Servicio ofrecido: {{paciente.servicio}}</h3>
+                        <h3>Estado en el ingreso: {{paciente.estadoalingreso}}</h3>
+                    </div>
+                </div>
+                
+            </section>
 
-        <section class="medicationData">
-            <h1>Datos sobre la medicación tomada</h1>
-        </section>
+            <section class="inicialLabsdata">
+                <div *ngFor="let laboratorios of laboratorios">
+                    <h1>Datos sobre las pruebas iniciales</h1>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Glucosa:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.glucosa >= 70 && laboratorios.glucosa <= 180, 'out-of-range': laboratorios.glucosa < 70 || laboratorios.glucosa > 180}">
+                                {{laboratorios.glucosa}}
+                            </h3>
+                        </div>
+                        <h3>(70 - 180) mg/dL</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>pH:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.ph >= 7.35 && laboratorios.ph <= 7.45, 'out-of-range': laboratorios.ph < 7.35 || laboratorios.ph > 7.45}">
+                                {{laboratorios.ph}}
+                            </h3>
+                        </div>
+                        <h3>(7.35 - 7.45) pH</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Cetonas:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.cetonas >= 0.6 && laboratorios.cetonas <= 1.0, 'out-of-range': laboratorios.cetonas < 0.6 || laboratorios.cetonas > 1.0}">
+                                {{laboratorios.cetonas}}
+                            </h3>
+                        </div>
+                        <h3>(0.6 - 1.0) mmol/L</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Creatinina:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.creatinina >= 0.6 && laboratorios.creatinina <= 1.2, 'out-of-range': laboratorios.creatinina < 0.6 || laboratorios.creatinina > 1.2}">
+                                {{laboratorios.creatinina}}
+                            </h3>
+                        </div>
+                        <h3>(0.6 - 1.2) mg/dL</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Hemoglobina:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.hemoglobina >= 12 && laboratorios.hemoglobina <= 16, 'out-of-range': laboratorios.hemoglobina < 12 || laboratorios.hemoglobina > 16}">
+                                {{laboratorios.hemoglobina}}
+                            </h3>
+                        </div>
+                        <h3>(12 - 16) g/dL</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Leucocitos:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.leucocitos >= 4000 && laboratorios.leucocitos <= 11000, 'out-of-range': laboratorios.leucocitos < 4000 || laboratorios.leucocitos > 11000}">
+                                {{laboratorios.leucocitos}}
+                            </h3>
+                        </div>
+                        <h3>(4000 - 11000) células/μL</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Sodio</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.sodio >= 135 && laboratorios.sodio <= 145, 'out-of-range': laboratorios.sodio < 135 || laboratorios.sodio > 145}">
+                                {{laboratorios.sodio}}
+                            </h3>
+                        </div>
+                        <h3>(135 - 145) mmol/L</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Potasio:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.potasio >= 3.5 && laboratorios.potasio <= 5.1, 'out-of-range': laboratorios.potasio < 3.5 || laboratorios.potasio > 5.1}">
+                                {{laboratorios.potasio}}
+                            </h3>
+                        </div>
+                        <h3>(3.5 - 5.1) mmol/L</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Urea:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.urea >= 7 && laboratorios.urea <= 20, 'out-of-range': laboratorios.urea < 7 || laboratorios.urea > 20}">
+                                {{laboratorios.urea}}
+                            </h3>
+                        </div>
+                        <h3>(7 - 20) mg/dL</h3>
+                    </div>
+                    <div class="parallel2">
+                        <div id="espacio" class="parallel">
+                            <h3>Amilasa:</h3>
+                            <h3 [ngClass]="{'within-range': laboratorios.amilasa >= 40 && laboratorios.amilasa <= 140, 'out-of-range': laboratorios.amilasa < 40 || laboratorios.amilasa > 140}">
+                                {{laboratorios.amilasa}}
+                            </h3>
+                        </div>
+                        <h3>(40 - 140) U/L</h3>
+                    </div>
+                </div>
+            </section>
 
-        <section class="proceduresData">
-            <h1>Datos sobre los procedimientos realizados</h1>
-        </section>
+            <section class="medicationData">
+                <h1>Datos sobre la medicación tomada</h1>
 
-        <section class="notesData">
-            <h1>Notas sobre el paciente</h1>
-        </section>
+                <div class="parallel2">
+                    <h3 class="subrayado">Medicamento</h3>
+                    <h3 class="subrayado">Vía</h3>
+                    <h3 class="subrayado">Dosis</h3>
+                </div>
+                <div *ngFor="let medicaciones of medicaciones">
+                    <div class="parallel2">
+                        <h3>{{medicaciones.id.medicamento}}</h3>
+                        <h3>{{medicaciones.via}}</h3>
+                        <h3>{{medicaciones.dosis}}</h3>
+                    </div>
+                </div>
+            </section>
 
-        <section class="graphics">
-            <h1>Gráficos sobre la evolución</h1>
-        </section>
+            <section class="proceduresData">
+                <h1>Datos sobre los procedimientos realizados</h1>
+
+                <div *ngFor="let procedimientos of procedimientos">
+                    <div class="parallel2">
+                        <h3>Procedimientos: {{normalizarString(procedimientos.procedimientos)}}</h3>
+                    </div>
+                    <div class="parallel2">
+                        <h3>Tratamientos: {{normalizarString(procedimientos.tratamientos)}}</h3>
+                    </div>
+                    <div class="parallel2">
+                        <h3>Radiología: {{normalizarString(procedimientos.radiologia)}}</h3>
+                    </div>
+                    <div class="parallel2">
+                        <h3>Cirugías previas: {{normalizarString(procedimientos.cirugiasprevias)}}</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notesData">
+                <h1>Notas sobre el paciente</h1>
+                <div *ngFor="let notas of notas">
+                    <h3 class="subrayado">{{notas.id.fecha}}</h3>
+                    <div class="parallel2">
+                        <h3>{{normalizarStringAsterisco(notas.nota)}}</h3>
+                    </div>
+                    <br>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <a>
+        <div class="contentButton">
+            <button class="boton">
+                <h3>Realizar una consulta</h3>
+            </button>
+        </div>
+    </a>
 </div>
-
-<a routerLink="/chat-box">
-    <div class="contentButton">
-        <button class="boton">
-            <h3>Realizar una consulta</h3>
-        </button>
-    </div>
-</a>

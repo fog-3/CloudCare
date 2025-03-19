@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -36,6 +39,19 @@ public class PacientesResource {
     @GetMapping("/evolucion/{id}")
     public ResponseEntity<List<evolucion>> getEvolucionById(@PathVariable("id") Integer id) {
         List<evolucion> evoluciones = evolucionService.findEvolucionById(id);
+        return new ResponseEntity<>(evoluciones, HttpStatus.OK);
+    }
+
+    @GetMapping("/evolucion/{id}/{fechaYhora}")
+    public ResponseEntity<evolucion> getEvolucionByIdFechaYHora(@PathVariable("id") Integer id, @PathVariable("fechaYhora") String fechaYhora) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        Date fechaYhoraNuevo = null;
+        try {
+            fechaYhoraNuevo = formatter.parse(fechaYhora);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        evolucion evoluciones = evolucionService.findEvolucionByIdFechaYHora(id, fechaYhoraNuevo);
         return new ResponseEntity<>(evoluciones, HttpStatus.OK);
     }
 

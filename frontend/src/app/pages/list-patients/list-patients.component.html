@@ -2,23 +2,25 @@
 
 <div class="linea"></div>
 
-<a routerLink="/patients">
-    <div class="content">
-        <div class="patient">
-            <div class="photoPatient"></div>
-
-            <div class="dataPatient">
-                <div class="personalDataPatient">
-                    <h3>Nombre completo del paciente</h3>
-                    <h3 id="onlyTabsLap">Fecha de nacimiento</h3>
-                    <h3 id="onlyTabsLap">Número de la Seguridad Social</h3>
-                </div>
+<div *ngFor="Paciente de pacientes">
+    <a routerLink="/patients">
+        <div class="content">
+            <div class="patient">
+                <div class="photoPatient"></div>
     
-                <div class="hospitalDataPatient">
-                    <h3 id="onlyTabsLap">Fecha de ingreso</h3>
-                    <h3>Efermedad por la que se ingreso</h3>
+                <div class="dataPatient">
+                    <div class="personalDataPatient">
+                        <h3>{{Paciente.nombre}}</h3>
+                        <h3 id="onlyTabsLap">{{Paciente.edad}}</h3>
+                        <h3 id="onlyTabsLap">{{Paciente.sexo}}</h3>
+                    </div>
+        
+                    <div class="hospitalDataPatient">
+                        <h3 id="onlyTabsLap">{{Paciente.fechaingreso}}</h3>
+                        <h3>{{Paciente.motivoingreso}}</h3>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</a>
+    </a>
+</div>

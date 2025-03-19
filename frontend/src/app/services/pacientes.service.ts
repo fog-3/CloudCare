@@ -7,12 +7,13 @@ import { LabIniciales } from '../types/lab_iniciales';
 import { Medicacion } from '../types/medicacion';
 import { Notas } from '../types/notas';
 import { Procedimientos } from '../types/procedimientos';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PacientesService {
-  private apiServerUrl = '';
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 

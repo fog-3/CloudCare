@@ -1,0 +1,11 @@
+[
+  {
+    "applyTo": "chat",
+    "headers": [
+      {
+        "name": "access-control-allow-origin",
+        "value": "*"
+      }
+    ]
+  }
+]

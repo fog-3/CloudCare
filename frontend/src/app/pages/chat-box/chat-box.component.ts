@@ -1,54 +1,75 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderChatComponent } from './header-chat/header-chat.component';
-import { HttpClient } from '@angular/common/http';
-import { response } from 'express';
+import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { response, Router } from 'express';
+import { PacientesService } from '../../services/pacientes.service';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Paciente } from '../../types/pacientes';
+import ApiResponse from '../../types/message_r';
+import { MessageE } from '../../types/message_e';
 
-interface Mensaje {
-  text: String;
-  esUsuario: boolean;
-}
+import { error } from 'console';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chat-box',
-  imports: [HeaderChatComponent],
+  imports: [HeaderChatComponent, CommonModule, HttpClientModule],
+  providers: [PacientesService],
   templateUrl: './chat-box.component.html',
   styleUrl: './chat-box.component.scss'
 })
 
 export class ChatBoxComponent implements OnInit {
-  mensajes: Mensaje[] = []; //Almacena los mensajes del chat
-  nuevoMensaje: string = ''; //Almacena el mensaje actual del usuario
-  private apiUrl = 'https://url-de-tu-api.com'; // URL de la API que interactúa con la IA
+  mensaje_r: ApiResponse[] = [];
+  mensaje_e: MessageE[] = [];
+  paciente: any = {};
+  esResumen: boolean = false;
+  esGrafico: boolean = false;
+  terminoBusqueda: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+      private pacienteService: PacientesService,
+      private route: ActivatedRoute,
+  ) {}
 
   // Opcional si queremos que el bot envíe un mensaje opcional
   ngOnInit(): void {
-      
+    this.route.queryParams.subscribe((params) => {
+      const termino = params['q']; // Obtén el término de búsqueda
+      this.getPacientesById(termino);
+    });
   }
 
-  enviarMensaje(): void {
-    if (this.nuevoMensaje.trim() == '') {
-      return;   // No enviar mensajes vacíos
+  public getPacientesById(pacienteid: number): void {
+    this.pacienteService.getPacienteById(pacienteid).subscribe(
+      (response: Paciente) => {
+        this.paciente = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public putMessage(pacienteId: number, quest: string) {
+    
+    this.terminoBusqueda = quest;
+
+    const message_e: MessageE = {
+      session_id: String(pacienteId),
+      question: quest,
+      paciente: this.paciente,
+      esGrafico: this.esGrafico,
+      esResumenEvolutivo: this.esResumen
     }
-
-    // Agregar mensaje del usuario al chat
-    this.mensajes.push({ text: this.nuevoMensaje, esUsuario: true });
-
-    // Enviar mensaje a la API
-    this.http.post<any>(`${this.apiUrl}/chat`, {mensaje: this.nuevoMensaje})
-      .subscribe(
-        (response) => {
-          // Agregar la respuesta de la IA al chat
-          this.mensajes.push({ text: response.respuesta, esUsuario: false });
-        },
-        (error) => {
-          console.error('Error al enviar el mensaje', error);
-          this.mensajes.push({ text: 'Hubo un error al procesar tu mensaje.', esUsuario: false });
-        }
-      );
-
-    // Limpia el campo de entrada
-    this.nuevoMensaje = '';
+    this.mensaje_e.push(message_e);
+    this.pacienteService.putMessage(message_e).subscribe(
+      (response: ApiResponse) => {
+        this.mensaje_r.push(response);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
   }
 }

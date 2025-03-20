@@ -2,14 +2,14 @@
 
 <div class="linea"></div>
 
-<div >
+<div>
     <div class="parallel">
         <div class="content">
             <aside class="history">
                 <h1 id="onlyTabsLap">Evolución</h1>
 
                 <div *ngFor="let evoluciones of evoluciones">
-                    <a (click)="goEvolucionPaciente(paciente.pacienteid, evoluciones.id.fechaYHora)">
+                    <a (click)="goEvolucionPaciente(paciente.pacienteid, evoluciones.id.fechaYHora, paciente.nombre)">
                         <div class="parallel2">
                             <h3>{{normalizarStringFecha(evoluciones.id.fechaYHora)}}</h3>
                         </div>
@@ -187,12 +187,4 @@
             </section>
         </div>
     </div>
-
-    <a>
-        <div class="contentButton">
-            <button class="boton">
-                <h3>Realizar una consulta</h3>
-            </button>
-        </div>
-    </a>
 </div>

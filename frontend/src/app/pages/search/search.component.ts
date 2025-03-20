@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Paciente } from '../../types/pacientes';
 import { PacientesService } from '../../services/pacientes.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-search',
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
+  providers: [PacientesService],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })

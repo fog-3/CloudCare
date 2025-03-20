@@ -1,1 +1,46 @@
-<p>evolution-patient works!</p>
+<app-header-patients></app-header-patients>
+
+<div class="linea"></div>
+
+<div>
+    <div class="parallel">
+        <div class="content">
+            <aside class="history">
+                <h1 id="onlyTabsLap">Evolución</h1>
+
+                <div *ngFor="let evoluciones of evoluciones">
+                    <a (click)="goEvolucionPaciente(paciente.pacienteid, evoluciones.id.fechaYHora, paciente.nombre)">
+                        <div class="parallel2">
+                            <h3>{{normalizarStringFecha(evoluciones.id.fechaYHora)}}</h3>
+                        </div>
+                        <br>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <div class="summaryPatient">
+            <section class="personalData">
+                <div class="parallelPatient">
+
+                    <div class="data">
+                        <h1>Datos sobre la evolución de {{paciente.nombre}} en el día {{normalizarStringFecha(evolucion.id.fechaYHora)}}</h1>
+                    </div>
+
+                    <!--<div *ngFor="let key of Object.keys(graficos)">
+                        <div style="width: 400px; height: 300px;">
+                          <canvas
+                            baseChart
+                            [type]="graficos[key].type"
+                            [data]="graficos[key].data"
+                            [options]="graficos[key].options"
+                          >
+                          </canvas>
+                        </div>
+                      </div> -->
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

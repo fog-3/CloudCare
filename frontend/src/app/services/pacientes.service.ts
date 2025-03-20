@@ -8,12 +8,16 @@ import { Medicacion } from '../types/medicacion';
 import { Notas } from '../types/notas';
 import { Procedimientos } from '../types/procedimientos';
 import { environment } from '../../environment/environment';
+import { MessageE } from '../types/message_e';
+import ApiResponse from '../types/message_r';
+import { ChatHistory } from '../types/chat_history';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PacientesService {
   private apiServerUrl = environment.apiBaseUrl;
+  private apiIAServerUrl = 'https://jh3hdiv0ff.execute-api.eu-central-1.amazonaws.com/qa';
 
   constructor(private http: HttpClient) { }
 
@@ -63,5 +67,13 @@ export class PacientesService {
 
   public getProcedimientos(pacienteId: number): Observable<Procedimientos[]> {
     return this.http.get<Procedimientos[]>(`${this.apiServerUrl}/pacientes/procedimientos/${pacienteId}`);
+  }
+
+  public putMessage(mensaje: MessageE): Observable<ApiResponse>{
+    return this.http.put<ApiResponse>(`${this.apiIAServerUrl}`, mensaje);
+  }
+
+  public getChatHistory(sessionId: string): Observable<ChatHistory[]> {
+      return this.http.get<ChatHistory[]>(`${this.apiServerUrl}/pacientes/chat`);
   }
 }

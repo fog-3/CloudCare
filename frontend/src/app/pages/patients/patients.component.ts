@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeaderPatientsComponent } from './header-patients/header-patients.component';
+import { HeaderPatientsComponent } from '../header-patients/header-patients.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PacientesService } from '../../services/pacientes.service';
 import { Paciente } from '../../types/pacientes';
@@ -123,9 +123,9 @@ export class PatientsComponent {
     );
   }
 
-  public goEvolucionPaciente(pacienteid: number, fecha: string) {
+  public goEvolucionPaciente(pacienteid: number, fecha: string, nombre: string) {
     // Navega a la página de resultados con el término de búsqueda
-    this.router.navigate(['/evolution-patient'], { queryParams: { q: pacienteid, p: fecha } });
+    this.router.navigate(['/evolution-patient'], { queryParams: { q: pacienteid, p: fecha, r: nombre } });
   }
 
   public normalizarString(c: string): string {

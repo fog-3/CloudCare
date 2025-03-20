@@ -2,18 +2,24 @@
 
 <div class="linea"></div>
 
+
+
 <div class="content">
     <div class="chat">
-        <div class="response">
-    
+        <div *ngIf="mensaje_e?.length != 0" class="request">
+            {{mensaje_e[1].question}}
+        </div>
+
+        <div *ngIf="mensaje_r?.length != 0" class="response">
+            {{mensaje_r[1].body}}
         </div>
     
         <h2>¿Cuál es tu consulta?</h2>
     
         <div class="parallel">
-            <input type="text" class="fondoBloqueTipo" placeholder="Hazme cualquier consulta">
+            <input type="search" (ngModelChange)="putMessage(paciente.pacienteid, quest.value)" #quest="" ngModel (keyup.enter)="putMessage(paciente.pacienteid, quest.value)" class="fondoBloqueTipo" placeholder="Hazme cualquier consulta">
     
-            <a>
+            <a (click)="putMessage(paciente.pacienteid, quest.value)">
                 <button class="button">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#edf6f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 2L11 13"></path>

@@ -40,6 +40,37 @@ header {
     width: 30%;
 }
 
+.boton{
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--color-sombras), 0 10px 20px var(--color-sombras);
+}
+
+.boton::before {
+    content: "";
+    
+    top: -2px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    z-index: -1;
+    
+    border-radius: 30px;
+    
+    opacity: 1;
+    transition: all .2s ease;
+}
+
+.boton:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px var(--color-sombras), 0 5px 10px var(--color-sombras);
+}
+
 @media (max-width: 500px) {
     button {
         border: none;

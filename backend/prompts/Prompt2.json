@@ -1,0 +1,19 @@
+{
+    "session_id": "usuario321",
+    "question": "Haz un gráfico sobre un paciente que tiene la frecuencia cardiaca alta",
+    "paciente": {
+      "nombre": "Juan Pérez",
+      "edad": 68,
+      "sexo": "M",
+      "alergias": null,
+      "motivoingreso": "Fiebre alta y tos productiva",
+      "diagnosticoprincipal": "233604007",
+      "condicionesprevias": "EPOC (fumador crónico), Hipertensión arterial",
+      "fechaingreso": "2023-05-01",
+      "servicio": "Neumología",
+      "estadoalingreso": "Estable, disnea moderada",
+      "pacienteid": 1
+    },
+    "esGrafico": true,
+    "esResumenEvolutivo": false
+}

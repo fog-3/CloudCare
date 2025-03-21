@@ -28,7 +28,9 @@ Tras esto, puedes seleccionar en el apartado lateral los datos de las anlíticas
 
 Como último tenemos y lo más importante el médico tiene la posibilidad de preguntarle a un ChatBot datos sobre el paciente, así como pedirle un resumen evolutivo del paciente, o incluso un gráfico con sus datos.
 
-<text  style="display: flex; justify-content: right;">[⬆️ volver arriba](#top)</text>
+<p style="text-align: left;">
+    <a href="#top">⬆️ volver arriba</a>
+</p>
 
 ## Como compilar el proyecto
 
@@ -47,9 +49,7 @@ CloudCare/
 │   │   ├── chat/             # Componente de chat  
 │   │   └── visualizations/   # Gráficos y tablas  
 ├── ml/  
-│   ├── data/                 # Datos sintéticos  
-│   ├── evaluation/           # Scripts de evaluación  
-│   └── models/               # Config Bedrock  
+│   ├── data/                 # Datos sintéticos y copia de seguridad sql
 ├── docs/  
 │   ├── architecture.md       # Diagrama de arquitectura  
 │   └── presentation/         # Material para la presentación  
@@ -88,19 +88,19 @@ Estas ramas son las que me ha recomendado ChatGpt
 ![Html](https://img.shields.io/badge/TypeScript-white?style=for-the-badge&logo=typescript&logoColor=3178C6)
 
 
-<p align="left">
+<p align="center">
 <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
 
 ## Entidades colaboradoras de la dathaton
 
-<div style="display: flex; justify-content: center; align-items: center;">
+<div align="center">
 <img src="https://www.dedalushackathon.com/wp-content/uploads/2022/10/Logo-Dedalus_Fondo-Azul.png" alt="Logo-Dedalus_Fondo-Azul" width="140" /> &nbsp;&nbsp;&nbsp;
 <img src="https://www.dedalushackathon.com/wp-content/uploads/2023/02/Logo-ETSII-Malaga.png" alt="Logo-ETSII-Malaga" width="150" /> &nbsp;&nbsp;&nbsp; <img src="https://www.dedalushackathon.com/wp-content/uploads/2023/02/Logo-ETSII-Sevilla.png" alt="Logo-ETSII-Sevilla" width="230" />
 </div>
 <br><br>
 
-<div style="display: flex; justify-content: center; align-items: center;">
+<div align="center">
 <img src="https://www.dedalushackathon.com/wp-content/uploads/2023/02/logo-malaga-tech-park.png" alt="logo-malaga-tech-park" width="130" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://www.dedalushackathon.com/wp-content/uploads/2023/02/logo-aws.png" alt="logo-aws" width="100" />
 </div>
@@ -108,4 +108,6 @@ Estas ramas son las que me ha recomendado ChatGpt
 
 Más información sobre la dathaton en este link: [Dathaton 2025 Malaga](https://www.dedalushackathon.com/datathon-andalucia).
 
-<text  style="display: flex; justify-content: right;">[⬆️ volver arriba](#top)</text>
+<p style="text-align: left;">
+    <a href="#top">⬆️ volver arriba</a>
+</p>

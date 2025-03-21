@@ -1,6 +1,10 @@
+<a id="top"></a>
 # <img src="frontend/src/assets/images/CloudCare-logo-sin-letras-readme.png" alt="cc-icon" width="45" /> CloudCare
 
-Proyecto realizado para la dathaton de 2025 organizada por Dedalus en Málaga junto a diferentes [organizadores](#entidades-organizadoras-de-la-dathaton) más.
+Proyecto realizado para la dathaton de 2025 organizada por Dedalus en Málaga junto a diferentes [organizadores](#entidades-colaboradoras-de-la-dathaton) más.
+
+![Video demo Cloudcare](frontend/src/assets/Gif2_CloudCare.gif)
+
 
 ## Índice:
 - [Descripción del reto a abordar](#descripción-del-reto-a-abordar)
@@ -24,7 +28,7 @@ Tras esto, puedes seleccionar en el apartado lateral los datos de las anlíticas
 
 Como último tenemos y lo más importante el médico tiene la posibilidad de preguntarle a un ChatBot datos sobre el paciente, así como pedirle un resumen evolutivo del paciente, o incluso un gráfico con sus datos.
 
-<text  style="display: flex; justify-content: right;">([volver arriba](#cloudcare))</text>
+<text  style="display: flex; justify-content: right;">[⬆️ volver arriba](#top)</text>
 
 ## Como compilar el proyecto
 
@@ -104,4 +108,4 @@ Estas ramas son las que me ha recomendado ChatGpt
 
 Más información sobre la dathaton en este link: [Dathaton 2025 Malaga](https://www.dedalushackathon.com/datathon-andalucia).
 
-<text  style="display: flex; justify-content: right;">([volver arriba](#cloudcare))</text>
+<text  style="display: flex; justify-content: right;">[⬆️ volver arriba](#top)</text>

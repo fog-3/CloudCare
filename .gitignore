@@ -6,3 +6,9 @@ frontend/node_modules
 .venv_CloudCare_AI
 *.zip
 ai/lambda_project/python
+
+## Archivos para eliminar en el backend
+.idea/
+backend/CloudCareSpring/target
+.vscode/
+backend/CloudCareSpring/.idea
